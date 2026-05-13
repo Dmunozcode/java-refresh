@@ -1,64 +1,88 @@
 package basic;
+
 import java.util.Scanner;
 
 public class Calculator {
 
     public static void main(String[] args) {
         int option = 0;
-        double num1;
-        double num2;
-        double resultado;
+        double firstNumber;
+        double secondNumber;
+        double result;
+
         Scanner scanner = new Scanner(System.in);
-        do{
+
+        do {
             showMenu();
             option = scanner.nextInt();
-            switch (option){
+
+            switch (option) {
                 case 1:
-                    System.out.println("Introduzca el primer numero");
-                    num1 = scanner.nextDouble();
-                    System.out.println("Introduzca el segundo numero");
-                    num2 = scanner.nextDouble();
-                    resultado = num1 + num2;
-                    System.out.println("El resultado es " + resultado);
-                  break;
+                    System.out.println("Enter the first number:");
+                    firstNumber = scanner.nextDouble();
+
+                    System.out.println("Enter the second number:");
+                    secondNumber = scanner.nextDouble();
+
+                    result = firstNumber + secondNumber;
+                    System.out.println("The result is: " + result);
+                    break;
+
                 case 2:
-                    System.out.println("Introduzca el primer numero");
-                    num1 = scanner.nextDouble();
-                    System.out.println("Introduzca el segundo numero");
-                    num2 = scanner.nextDouble();
-                    resultado = num1 - num2;
-                    System.out.println("El resultado es " + resultado);
+                    System.out.println("Enter the first number:");
+                    firstNumber = scanner.nextDouble();
+
+                    System.out.println("Enter the second number:");
+                    secondNumber = scanner.nextDouble();
+
+                    result = firstNumber - secondNumber;
+                    System.out.println("The result is: " + result);
                     break;
+
                 case 3:
-                    System.out.println("Introduzca el primer numero");
-                    num1 = scanner.nextDouble();
-                    System.out.println("Introduzca el segundo numero");
-                    num2 = scanner.nextDouble();
-                    resultado = num1 * num2;
-                    System.out.println("El resultado es " + resultado);
+                    System.out.println("Enter the first number:");
+                    firstNumber = scanner.nextDouble();
+
+                    System.out.println("Enter the second number:");
+                    secondNumber = scanner.nextDouble();
+
+                    result = firstNumber * secondNumber;
+                    System.out.println("The result is: " + result);
                     break;
+
                 case 4:
-                    System.out.println("Introduzca el primer numero");
-                    num1 = scanner.nextDouble();
-                    System.out.println("Introduzca el segundo numero");
-                    num2 = scanner.nextDouble();
-                    resultado = num1 / num2;
-                    System.out.println("El resultado es " + resultado);
+                    System.out.println("Enter the first number:");
+                    firstNumber = scanner.nextDouble();
+
+                    System.out.println("Enter the second number:");
+                    secondNumber = scanner.nextDouble();
+
+                    if (secondNumber == 0) {
+                        System.out.println("Error: cannot divide by zero");
+                    } else {
+                        result = firstNumber / secondNumber;
+                        System.out.println("The result is: " + result);
+                    }
                     break;
+
                 case 5:
                     break;
+
                 default:
-                    System.out.println("Opción no valida");
+                    System.out.println("Invalid option");
             }
 
-        }while(option != 5);
-        System.out.println("Saliendo de la calculadora...");
+        } while (option != 5);
+
+        System.out.println("Exiting calculator...");
+        scanner.close();
     }
-    public static void showMenu(){
-        System.out.println("1. Sumar: ");
-        System.out.println("2. Restar: ");
-        System.out.println("3. Multiplicar: ");
-        System.out.println("4. Dividir: ");
-        System.out.println("5. Salir: ");
+
+    public static void showMenu() {
+        System.out.println("1. Add");
+        System.out.println("2. Subtract");
+        System.out.println("3. Multiply");
+        System.out.println("4. Divide");
+        System.out.println("5. Exit");
     }
 }
