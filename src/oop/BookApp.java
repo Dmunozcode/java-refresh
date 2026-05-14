@@ -1,22 +1,38 @@
 package oop;
+import java.util.Scanner;
 
 public class BookApp {
     public static void main(String[] args) {
-        Book book1 = new Book("Clean Code", "Robert C. Martin", 464, false);
-        Book book2 = new Book("The Pragmatic Programmer", "Andrew Hunt", 352, false);
-        Book book3 = new Book("Effective Java", "Joshua Bloch", 416, false);
+        Scanner scanner = new Scanner(System.in);
+        int option = 0;
+        do{
+            showMenu();
+            option = scanner.nextInt();
+            switch (option){
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    break;
+                default:
+                    System.out.println("Invalid option");
+            }
 
-        System.out.println(book1);
-        System.out.println(book2);
-        System.out.println(book3);
+        }while(option != 5);
 
-        book2.markAsRead();
-
-        System.out.println(book2.toString());
-
-        book2.setPages(500);
-
-        System.out.println(book2.getPages());
-
+        System.out.println("Exiting app...");
+        scanner.close();
+    }
+    public static void showMenu(){
+        System.out.println("1. Add a book ");
+        System.out.println("2. List books ");
+        System.out.println("3. Search a book ");
+        System.out.println("4. Delete a book ");
+        System.out.println("5. Exit ");
     }
 }
