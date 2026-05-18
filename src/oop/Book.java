@@ -13,6 +13,13 @@ public class Book {
         this.read = read;
     }
 
+    public Book(String title, String author, int pages) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = false;
+    }
+
     public String getTitle() {
         return title;
     }
